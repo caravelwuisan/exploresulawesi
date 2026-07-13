@@ -6,16 +6,11 @@
   <title>North Sulawesi Explorer — Manado, Bunaken & Beyond | Travel Guide 2026</title>
   <meta name="description" content="The ultimate travel guide to North Sulawesi. Discover Manado, Bunaken diving paradise, Tomohon volcanoes, and Lembeh Strait — with direct flights from China & Singapore.">
   <meta name="keywords" content="Manado, Bunaken, North Sulawesi, diving, travel guide, Tomohon, Lembeh Strait, Indonesia travel">
-  
-  <!-- Open Graph -->
   <meta property="og:title" content="North Sulawesi Explorer — Manado, Bunaken & Beyond">
   <meta property="og:description" content="The ultimate guide to Indonesia's most underrated destination. World-class diving, volcanic landscapes, and direct flights from Guangzhou, Singapore & Bali.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://northsulawesi.com">
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="North Sulawesi Explorer">
-  
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,19 +18,10 @@
     "name": "North Sulawesi Explorer",
     "url": "https://northsulawesi.com",
     "description": "The ultimate travel guide to North Sulawesi — Manado, Bunaken, Tomohon, Lembeh",
-    "inLanguage": "en",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://northsulawesi.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": "en"
   }
   </script>
-
   <style>
-    /* =============================================
-       RESET & BASE
-    ============================================= */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -49,14 +35,11 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
 
-    /* =============================================
-       NAVIGATION — Glassmorphism
-    ============================================= */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(255,255,255,0.72);
       backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid rgba(0,0,0,0.04);
     }
     nav .container {
@@ -87,11 +70,8 @@
       transition: all 0.25s;
     }
     .nav-lang:hover { background: #0c5a3e; transform: translateY(-1px); }
-    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #333; padding: 8px; }
 
-    /* =============================================
-       HERO — Full-bleed dramatic gradient
-    ============================================= */
+    /* HERO - CAROUSEL */
     .hero {
       margin-top: 68px;
       min-height: 92vh;
@@ -100,25 +80,42 @@
       overflow: hidden;
       background: #0a1a14;
     }
-    .hero-bg {
+    .hero-slides {
       position: absolute; inset: 0;
-      background: 
-        radial-gradient(ellipse 80% 60% at 0% 20%, rgba(15,108,74,0.4) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 50% at 100% 80%, rgba(0,150,136,0.25) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(11,45,38,0.8) 0%, transparent 70%);
-      z-index: 0;
     }
+    .hero-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      animation: heroFade 24s infinite;
+    }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 8s; }
+    .hero-slide:nth-child(3) { animation-delay: 16s; }
+    .hero-slide .slide-img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .hero-slide::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,26,20,0.85) 0%, rgba(10,26,20,0.45) 50%, rgba(0,0,0,0.3) 100%);
+    }
+    @keyframes heroFade {
+      0%, 20% { opacity: 1; }
+      33%, 100% { opacity: 0; }
+    }
+
     .hero-grid {
-      position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+      position: absolute; inset: 0; z-index: 1; opacity: 0.04;
       background-image: 
         linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    .hero .container { position: relative; z-index: 1; padding: 80px 24px; }
+    .hero .container { position: relative; z-index: 2; padding: 80px 24px; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.1);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,0.12);
       padding: 6px 18px 6px 14px;
@@ -177,7 +174,6 @@
       transition: all 0.3s;
     }
     .btn-ghost:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
-
     .hero-stats {
       display: flex; gap: 40px; flex-wrap: wrap;
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -190,10 +186,24 @@
     .hero-stat .label {
       font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px;
     }
+    .slide-indicators {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 2;
+    }
+    .slide-indicators span {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      animation: indicatorPulse 24s infinite;
+    }
+    .slide-indicators span:nth-child(1) { animation-delay: 0s; }
+    .slide-indicators span:nth-child(2) { animation-delay: 8s; }
+    .slide-indicators span:nth-child(3) { animation-delay: 16s; }
+    @keyframes indicatorPulse {
+      0%, 8% { background: #7fdbad; transform: scale(1.3); }
+      10%, 100% { background: rgba(255,255,255,0.25); transform: scale(1); }
+    }
 
-    /* =============================================
-       SECTION COMMON
-    ============================================= */
+    /* SECTIONS */
     section { padding: 100px 0; }
     .section-eyebrow {
       font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
@@ -213,9 +223,7 @@
       margin-bottom: 56px;
     }
 
-    /* =============================================
-       DESTINATIONS — Modern cards
-    ============================================= */
+    /* DESTINATIONS - Image cards */
     .dest-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -228,26 +236,23 @@
       border: 1px solid #eef0f4;
       transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
       cursor: pointer;
-      position: relative;
     }
     .dest-card:hover { 
       transform: translateY(-8px); 
       box-shadow: 0 24px 48px -12px rgba(0,0,0,0.12);
       border-color: transparent;
     }
-    .dest-card-visual {
+    .dest-card-img {
       height: 220px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 64px;
-      position: relative;
       overflow: hidden;
+      position: relative;
     }
-    .dest-card-visual::before {
-      content: ''; position: absolute; inset: 0;
-      opacity: 0.08;
-      background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 40px);
+    .dest-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
     }
-    .dest-card-body { padding: 28px 28px 32px; }
+    .dest-card:hover .dest-card-img img { transform: scale(1.08); }
+    .dest-card-body { padding: 28px; }
     .dest-card-body h3 { 
       font-size: 22px; font-weight: 700; margin-bottom: 8px; 
       letter-spacing: -0.3px;
@@ -257,21 +262,10 @@
     .dest-tag {
       font-size: 11px; font-weight: 600;
       padding: 5px 14px; border-radius: 20px;
-      letter-spacing: 0.2px;
+      background: #eafaf1; color: #0f6c4a;
     }
 
-    .dc-bunaken .dest-card-visual { background: linear-gradient(135deg, #004d74, #0088b0); }
-    .dc-bunaken .dest-tag { background: #e2f3fd; color: #005a86; }
-    .dc-manado .dest-card-visual { background: linear-gradient(135deg, #1a1a2e, #2d2d44); }
-    .dc-manado .dest-tag { background: #eaeaf0; color: #2d2d44; }
-    .dc-tomohon .dest-card-visual { background: linear-gradient(135deg, #1a3a0a, #4a7c1a); }
-    .dc-tomohon .dest-tag { background: #e8f5e0; color: #2d5a10; }
-    .dc-lembeh .dest-card-visual { background: linear-gradient(135deg, #0d0d2b, #2a1a5e); }
-    .dc-lembeh .dest-tag { background: #eae2fd; color: #2a1a5e; }
-
-    /* =============================================
-       FLIGHT ROUTES — Dark glass section
-    ============================================= */
+    /* FLIGHTS */
     .flights-section {
       background: #0a1a14;
       position: relative;
@@ -314,9 +308,7 @@
       color: #7fdbad;
     }
 
-    /* =============================================
-       ARTICLES — Magazine layout
-    ============================================= */
+    /* ARTICLES */
     .art-section { background: #fff; }
     .art-grid {
       display: grid;
@@ -347,9 +339,22 @@
       display: flex; align-items: center; gap: 12px;
     }
 
-    /* =============================================
-       CTA SECTION
-    ============================================= */
+    /* GALLERY STRIP */
+    .gallery-section { padding: 0; }
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-height: 280px;
+      overflow: hidden;
+    }
+    .gallery-strip img {
+      width: 100%; height: 280px; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .gallery-strip:hover img { filter: brightness(0.8); }
+    .gallery-strip img:hover { transform: scale(1.05); filter: brightness(1); z-index: 1; }
+
+    /* CTA */
     .cta {
       text-align: center;
       padding: 100px 24px;
@@ -366,9 +371,7 @@
     .cta .btn-primary { background: linear-gradient(135deg, #7fdbad, #4fc3f7); color: #0a1a14; }
     .cta .btn-primary:hover { box-shadow: 0 12px 32px rgba(127,219,173,0.25); }
 
-    /* =============================================
-       FOOTER
-    ============================================= */
+    /* FOOTER */
     footer {
       background: #0d0d14;
       color: rgba(255,255,255,0.5);
@@ -393,9 +396,7 @@
       opacity: 0.4;
     }
 
-    /* =============================================
-       ANIMATIONS — Pure CSS scroll reveals
-    ============================================= */
+    /* ANIMATIONS */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -409,9 +410,6 @@
     .animate-in:nth-child(3) { animation-delay: 0.3s; }
     .animate-in:nth-child(4) { animation-delay: 0.4s; }
 
-    /* =============================================
-       RESPONSIVE
-    ============================================= */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .mobile-toggle { display: block; }
@@ -424,12 +422,13 @@
       .flight-grid { grid-template-columns: 1fr; }
       section { padding: 60px 0; }
       footer .container { grid-template-columns: 1fr; gap: 32px; }
+      .gallery-strip { grid-template-columns: repeat(2, 1fr); max-height: none; }
+      .gallery-strip img { height: 200px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
   <nav>
     <div class="container">
       <a href="/" class="logo">North Sulawesi Explorer</a>
@@ -440,13 +439,23 @@
         <a href="#">Comparisons</a>
         <a href="/zh/" class="nav-lang">中文</a>
       </div>
-      <button class="mobile-toggle" aria-label="Menu">☰</button>
+      <button class="mobile-toggle" style="display:none;background:none;border:none;font-size:24px;cursor:pointer;color:#333;padding:8px">☰</button>
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+  <!-- HERO WITH CAROUSEL -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-slides">
+      <div class="hero-slide">
+        <img class="slide-img" src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1920&q=80" alt="Bunaken coral reef with vibrant marine life">
+      </div>
+      <div class="hero-slide">
+        <img class="slide-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80" alt="Tropical beach paradise">
+      </div>
+      <div class="hero-slide">
+        <img class="slide-img" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80" alt="Volcanic mountain landscape">
+      </div>
+    </div>
     <div class="hero-grid"></div>
     <div class="container">
       <div class="hero-tag">
@@ -473,31 +482,37 @@
         </a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">30 min</div>
-          <div class="label">Airport to Bunaken</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">390+</div>
-          <div class="label">Coral Species</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">4</div>
-          <div class="label">Direct Flight Routes</div>
-        </div>
+        <div class="hero-stat"><div class="num">30 min</div><div class="label">Airport to Bunaken</div></div>
+        <div class="hero-stat"><div class="num">390+</div><div class="label">Coral Species</div></div>
+        <div class="hero-stat"><div class="num">4</div><div class="label">Direct Flight Routes</div></div>
       </div>
+    </div>
+    <div class="slide-indicators">
+      <span></span><span></span><span></span>
     </div>
   </section>
 
-  <!-- ============ DESTINATIONS ============ -->
+  <!-- GALLERY STRIP -->
+  <section class="gallery-section">
+    <div class="gallery-strip">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Underwater coral reef">
+      <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=600&q=80" alt="Tropical fish school">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Volcanic sunset">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Sunset over tropical island">
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
   <section>
     <div class="container">
       <div class="section-eyebrow">🏝️ Destinations</div>
       <h2 class="section-title">Explore the Region</h2>
       <p class="section-desc">Four worlds within reach — from world-class diving to ancient volcanic landscapes, all connected by a single gateway city.</p>
       <div class="dest-grid">
-        <div class="dest-card dc-bunaken animate-in">
-          <div class="dest-card-visual">🏝️</div>
+        <div class="dest-card animate-in">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1544550581-5f7ceaf7f1b2?auto=format&fit=crop&w=600&q=80" alt="Bunaken coral reef">
+          </div>
           <div class="dest-card-body">
             <h3>Bunaken</h3>
             <p>Coral walls, green turtles, and some of the best diving on Earth. UNESCO-calibre marine park, 30 minutes from Manado.</p>
@@ -507,8 +522,10 @@
             </div>
           </div>
         </div>
-        <div class="dest-card dc-manado animate-in">
-          <div class="dest-card-visual">🌆</div>
+        <div class="dest-card animate-in">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?auto=format&fit=crop&w=600&q=80" alt="Manado city">
+          </div>
           <div class="dest-card-body">
             <h3>Manado</h3>
             <p>The vibrant gateway to North Sulawesi. Chinese temples, waterfront dining, bustling markets — and the only international airport in the region.</p>
@@ -518,8 +535,10 @@
             </div>
           </div>
         </div>
-        <div class="dest-card dc-tomohon animate-in">
-          <div class="dest-card-visual">🌋</div>
+        <div class="dest-card animate-in">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Tomohon volcano">
+          </div>
           <div class="dest-card-body">
             <h3>Tomohon</h3>
             <p>Volcanic highlands, the famous flower market, and Lake Linow's tri-colour waters. A cool escape 1 hour from Manado.</p>
@@ -529,8 +548,10 @@
             </div>
           </div>
         </div>
-        <div class="dest-card dc-lembeh animate-in">
-          <div class="dest-card-visual">🐙</div>
+        <div class="dest-card animate-in">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=600&q=80" alt="Lembeh marine life">
+          </div>
           <div class="dest-card-body">
             <h3>Lembeh Strait</h3>
             <p>The global capital of muck diving. Frogfish, pygmy seahorses, blue-ringed octopus — critters found nowhere else on Earth.</p>
@@ -544,7 +565,7 @@
     </div>
   </section>
 
-  <!-- ============ FLIGHTS ============ -->
+  <!-- FLIGHTS -->
   <section class="flights-section">
     <div class="container">
       <div class="section-eyebrow" style="color:#7fdbad">✈️ Getting Here</div>
@@ -591,7 +612,7 @@
     </div>
   </section>
 
-  <!-- ============ ARTICLES ============ -->
+  <!-- ARTICLES -->
   <section class="art-section">
     <div class="container">
       <div class="section-eyebrow">📰 Latest Guides</div>
@@ -601,33 +622,32 @@
         <a class="art-card animate-in" href="#">
           <span class="cat">⚖️ Comparison</span>
           <h4>Bunaken vs Raja Ampat: Which Dive Destination Wins in 2026?</h4>
-          <p>An honest head-to-head comparison of Indonesia's two most famous dive destinations — accessibility, marine life, costs, and crowds. Verdict: Bunaken wins for 9 out of 10 divers.</p>
-          <span class="meta">Coming soon</span>
+          <p>An honest head-to-head comparison of Indonesia's two most famous dive destinations — accessibility, marine life, costs, and crowds.</p>
+          <span class="meta">Read article →</span>
         </a>
         <a class="art-card animate-in" href="#">
           <span class="cat">✈️ Travel Guide</span>
           <h4>How to Get to Manado: Direct Flights & Best Routes 2026</h4>
-          <p>From Guangzhou, Singapore, Bali, and Jakarta — all direct flight options updated for 2026 with schedules, airlines, and tips to score the best deals.</p>
+          <p>From Guangzhou, Singapore, Bali, and Jakarta — all direct flight options with schedules, airlines, and tips to score the best deals.</p>
           <span class="meta">Coming soon</span>
         </a>
         <a class="art-card animate-in" href="#">
           <span class="cat">🌊 Diving</span>
           <h4>Best Time to Dive Bunaken: Seasonality, Visibility & Marine Life</h4>
-          <p>Dry season vs wet season, water temperatures, currents, and what marine life you can expect month by month. Plan your dive trip with confidence.</p>
+          <p>Dry season vs wet season, water temperatures, currents, and what marine life you can expect month by month.</p>
           <span class="meta">Coming soon</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
+  <!-- CTA -->
   <section class="cta">
     <h2>Ready to Explore North Sulawesi?</h2>
-    <p>Get the latest guides, diving tips, and travel updates straight to your inbox. No spam — just honest advice from locals who know the region best.</p>
+    <p>Get the latest guides, diving tips, and travel updates straight to your inbox. No spam — just honest advice from locals.</p>
     <a href="#" class="btn-primary">Subscribe for Updates →</a>
   </section>
 
-  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
       <div>
