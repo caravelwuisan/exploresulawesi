@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Sulawesi Explorer — Manado, Bunaken & Beyond | Travel Guide 2026</title>
+  <meta name="description" content="The ultimate travel guide to North Sulawesi. Discover Manado, Bunaken diving paradise, Tomohon volcanoes, and Lembeh Strait — with direct flights from China & Singapore.">
+  <meta name="keywords" content="Manado, Bunaken, North Sulawesi, diving, travel guide, Tomohon, Lembeh Strait, Indonesia travel">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="North Sulawesi Explorer — Manado, Bunaken & Beyond">
+  <meta property="og:description" content="The ultimate guide to Indonesia's most underrated destination. World-class diving, volcanic landscapes, and direct flights from Guangzhou, Singapore & Bali.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northsulawesi.com">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="North Sulawesi Explorer">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "North Sulawesi Explorer",
+    "url": "https://northsulawesi.com",
+    "description": "The ultimate travel guide to North Sulawesi — Manado, Bunaken, Tomohon, Lembeh",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://northsulawesi.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      color: #141416;
+      background: #f8f9fc;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* =============================================
+       NAVIGATION — Glassmorphism
+    ============================================= */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #0b2d26, #0f6c4a);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { 
+      font-size: 14px; font-weight: 500; color: #5b5b66; 
+      transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #0f6c4a;
+      transition: width 0.3s ease; border-radius: 2px;
+    }
+    .nav-links a:hover { color: #0f6c4a; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-lang {
+      font-size: 13px; font-weight: 600; color: #fff;
+      background: #0f6c4a; padding: 6px 16px; border-radius: 24px;
+      transition: all 0.25s;
+    }
+    .nav-lang:hover { background: #0c5a3e; transform: translateY(-1px); }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #333; padding: 8px; }
+
+    /* =============================================
+       HERO — Full-bleed dramatic gradient
+    ============================================= */
+    .hero {
+      margin-top: 68px;
+      min-height: 92vh;
+      display: flex; align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: #0a1a14;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 60% at 0% 20%, rgba(15,108,74,0.4) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 100% 80%, rgba(0,150,136,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(11,45,38,0.8) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero .container { position: relative; z-index: 1; padding: 80px 24px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 6px 18px 6px 14px;
+      border-radius: 24px;
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+    }
+    .hero-tag .pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #7fdbad; display: inline-block;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      color: #fff;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #7fdbad 0%, #4fc3f7 60%, #7c4dff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: clamp(17px, 1.8vw, 21px);
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .hero-actions {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #0f6c4a, #148a5e);
+      color: #fff; font-weight: 600; font-size: 16px;
+      padding: 16px 34px; border-radius: 40px;
+      transition: all 0.3s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(15,108,74,0.3); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8); font-weight: 500; font-size: 16px;
+      padding: 16px 32px; border-radius: 40px;
+      transition: all 0.3s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
+
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 36px;
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat .num {
+      font-size: 28px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+    }
+    .hero-stat .label {
+      font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px;
+    }
+
+    /* =============================================
+       SECTION COMMON
+    ============================================= */
+    section { padding: 100px 0; }
+    .section-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: #0f6c4a; margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(30px, 3.2vw, 44px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      color: #141416;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 17px; color: #6b6b78;
+      max-width: 560px; line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* =============================================
+       DESTINATIONS — Modern cards
+    ============================================= */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .dest-card {
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #eef0f4;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
+      position: relative;
+    }
+    .dest-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 24px 48px -12px rgba(0,0,0,0.12);
+      border-color: transparent;
+    }
+    .dest-card-visual {
+      height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dest-card-visual::before {
+      content: ''; position: absolute; inset: 0;
+      opacity: 0.08;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 40px);
+    }
+    .dest-card-body { padding: 28px 28px 32px; }
+    .dest-card-body h3 { 
+      font-size: 22px; font-weight: 700; margin-bottom: 8px; 
+      letter-spacing: -0.3px;
+    }
+    .dest-card-body p { font-size: 14px; color: #6b6b78; line-height: 1.7; margin-bottom: 18px; }
+    .dest-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .dest-tag {
+      font-size: 11px; font-weight: 600;
+      padding: 5px 14px; border-radius: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    .dc-bunaken .dest-card-visual { background: linear-gradient(135deg, #004d74, #0088b0); }
+    .dc-bunaken .dest-tag { background: #e2f3fd; color: #005a86; }
+    .dc-manado .dest-card-visual { background: linear-gradient(135deg, #1a1a2e, #2d2d44); }
+    .dc-manado .dest-tag { background: #eaeaf0; color: #2d2d44; }
+    .dc-tomohon .dest-card-visual { background: linear-gradient(135deg, #1a3a0a, #4a7c1a); }
+    .dc-tomohon .dest-tag { background: #e8f5e0; color: #2d5a10; }
+    .dc-lembeh .dest-card-visual { background: linear-gradient(135deg, #0d0d2b, #2a1a5e); }
+    .dc-lembeh .dest-tag { background: #eae2fd; color: #2a1a5e; }
+
+    /* =============================================
+       FLIGHT ROUTES — Dark glass section
+    ============================================= */
+    .flights-section {
+      background: #0a1a14;
+      position: relative;
+      overflow: hidden;
+    }
+    .flights-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 30% 100%, rgba(15,108,74,0.15) 0%, transparent 70%);
+    }
+    .flights-section .container { position: relative; z-index: 1; }
+    .flights-section .section-title { color: #fff; }
+    .flights-section .section-desc { color: rgba(255,255,255,0.5); }
+    .flight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .flight-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+    .flight-card:hover { 
+      border-color: rgba(255,255,255,0.18); 
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-3px);
+    }
+    .flight-card .emoji { font-size: 32px; margin-bottom: 14px; display: block; }
+    .flight-card h4 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .flight-card p { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .flight-badge {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px; font-weight: 600;
+      padding: 4px 14px; border-radius: 12px;
+      background: rgba(127,219,173,0.12);
+      color: #7fdbad;
+    }
+
+    /* =============================================
+       ARTICLES — Magazine layout
+    ============================================= */
+    .art-section { background: #fff; }
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    .art-card {
+      display: flex; flex-direction: column;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid #eef0f4;
+      transition: all 0.3s;
+      background: #fff;
+    }
+    .art-card:hover { 
+      border-color: #c8e6d7; 
+      box-shadow: 0 8px 28px rgba(15,108,74,0.05);
+      transform: translateY(-4px);
+    }
+    .art-card .cat {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #0f6c4a; margin-bottom: 10px;
+    }
+    .art-card h4 { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
+    .art-card p { font-size: 14px; color: #6b6b78; line-height: 1.7; flex: 1; }
+    .art-card .meta { 
+      font-size: 12px; color: #aaa; margin-top: 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    /* =============================================
+       CTA SECTION
+    ============================================= */
+    .cta {
+      text-align: center;
+      padding: 100px 24px;
+      background: linear-gradient(135deg, #0a1a14 0%, #0f3d2e 100%);
+      color: #fff;
+    }
+    .cta h2 {
+      font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+    .cta p { color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto 32px; font-size: 17px; }
+    .cta .btn-primary { background: linear-gradient(135deg, #7fdbad, #4fc3f7); color: #0a1a14; }
+    .cta .btn-primary:hover { box-shadow: 0 12px 32px rgba(127,219,173,0.25); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #0d0d14;
+      color: rgba(255,255,255,0.5);
+      padding: 60px 0 36px;
+    }
+    footer .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    footer h5 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 20px; }
+    footer a { display: block; font-size: 13px; margin-bottom: 12px; opacity: 0.6; transition: opacity 0.2s; }
+    footer a:hover { opacity: 1; }
+    footer .brand-desc { font-size: 14px; line-height: 1.7; margin-bottom: 20px; max-width: 340px; }
+    footer .bottom {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+      opacity: 0.4;
+    }
+
+    /* =============================================
+       ANIMATIONS — Pure CSS scroll reveals
+    ============================================= */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-in:nth-child(1) { animation-delay: 0.1s; }
+    .animate-in:nth-child(2) { animation-delay: 0.2s; }
+    .animate-in:nth-child(3) { animation-delay: 0.3s; }
+    .animate-in:nth-child(4) { animation-delay: 0.4s; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .hero { min-height: 80vh; }
+      .hero h1 { font-size: 38px; letter-spacing: -1.5px; }
+      .hero-stats { gap: 24px; }
+      .hero-stat .num { font-size: 22px; }
+      .dest-grid { grid-template-columns: 1fr; }
+      .art-grid { grid-template-columns: 1fr; }
+      .flight-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      footer .container { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">North Sulawesi Explorer</a>
+      <div class="nav-links">
+        <a href="#">Destinations</a>
+        <a href="#">Diving</a>
+        <a href="#">Guides</a>
+        <a href="#">Comparisons</a>
+        <a href="/zh/" class="nav-lang">中文</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-tag">
+        <span class="pulse"></span>
+        Direct flights from Guangzhou · Singapore · Bali
+      </div>
+      <h1>
+        Discover <span class="gradient-text">North Sulawesi</span><br>
+        Where Paradise Has No Crowds
+      </h1>
+      <p>
+        From the coral walls of Bunaken to the volcanic highlands of Tomohon — 
+        your complete guide to Indonesia's most underrated destination. World-class diving, 
+        extraordinary culture, and direct international flights.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">
+          Explore Destinations
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">
+          Best Time to Visit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">30 min</div>
+          <div class="label">Airport to Bunaken</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">390+</div>
+          <div class="label">Coral Species</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">4</div>
+          <div class="label">Direct Flight Routes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section>
+    <div class="container">
+      <div class="section-eyebrow">🏝️ Destinations</div>
+      <h2 class="section-title">Explore the Region</h2>
+      <p class="section-desc">Four worlds within reach — from world-class diving to ancient volcanic landscapes, all connected by a single gateway city.</p>
+      <div class="dest-grid">
+        <div class="dest-card dc-bunaken animate-in">
+          <div class="dest-card-visual">🏝️</div>
+          <div class="dest-card-body">
+            <h3>Bunaken</h3>
+            <p>Coral walls, green turtles, and some of the best diving on Earth. UNESCO-calibre marine park, 30 minutes from Manado.</p>
+            <div class="dest-tags">
+              <span class="dest-tag">🐠 Diving Paradise</span>
+              <span class="dest-tag">📍 30 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card dc-manado animate-in">
+          <div class="dest-card-visual">🌆</div>
+          <div class="dest-card-body">
+            <h3>Manado</h3>
+            <p>The vibrant gateway to North Sulawesi. Chinese temples, waterfront dining, bustling markets — and the only international airport in the region.</p>
+            <div class="dest-tags">
+              <span class="dest-tag">✈️ International Hub</span>
+              <span class="dest-tag">🍜 Food Capital</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card dc-tomohon animate-in">
+          <div class="dest-card-visual">🌋</div>
+          <div class="dest-card-body">
+            <h3>Tomohon</h3>
+            <p>Volcanic highlands, the famous flower market, and Lake Linow's tri-colour waters. A cool escape 1 hour from Manado.</p>
+            <div class="dest-tags">
+              <span class="dest-tag">🌺 Volcano Trekking</span>
+              <span class="dest-tag">🏔️ 850m Elevation</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card dc-lembeh animate-in">
+          <div class="dest-card-visual">🐙</div>
+          <div class="dest-card-body">
+            <h3>Lembeh Strait</h3>
+            <p>The global capital of muck diving. Frogfish, pygmy seahorses, blue-ringed octopus — critters found nowhere else on Earth.</p>
+            <div class="dest-tags">
+              <span class="dest-tag">🔬 Macro Paradise</span>
+              <span class="dest-tag">🏆 World #1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLIGHTS ============ -->
+  <section class="flights-section">
+    <div class="container">
+      <div class="section-eyebrow" style="color:#7fdbad">✈️ Getting Here</div>
+      <h2 class="section-title">Direct Flights to Manado</h2>
+      <p class="section-desc">Better connected than you think. Sam Ratulangi International Airport receives daily flights from China, Singapore, and across Indonesia.</p>
+      <div class="flight-grid">
+        <div class="flight-card">
+          <span class="emoji">🇨🇳</span>
+          <h4>Guangzhou → Manado</h4>
+          <p>China Southern · TransNusa</p>
+          <span class="flight-badge">Multiple weekly</span>
+        </div>
+        <div class="flight-card">
+          <span class="emoji">🇨🇳</span>
+          <h4>Shenzhen → Manado</h4>
+          <p>TransNusa</p>
+          <span class="flight-badge">3x weekly</span>
+        </div>
+        <div class="flight-card">
+          <span class="emoji">🇨🇳</span>
+          <h4>Kunming → Manado</h4>
+          <p>Lucky Air</p>
+          <span class="flight-badge">Regular</span>
+        </div>
+        <div class="flight-card">
+          <span class="emoji">🇸🇬</span>
+          <h4>Singapore → Manado</h4>
+          <p>Scoot</p>
+          <span class="flight-badge">~3h direct</span>
+        </div>
+        <div class="flight-card">
+          <span class="emoji">🇮🇩</span>
+          <h4>Bali (Denpasar) → Manado</h4>
+          <p>Lion Air · TransNusa</p>
+          <span class="flight-badge">Daily direct</span>
+        </div>
+        <div class="flight-card">
+          <span class="emoji">🇮🇩</span>
+          <h4>Jakarta → Manado</h4>
+          <p>Lion, Garuda, Citilink, Batik Air, AirAsia</p>
+          <span class="flight-badge">Multiple daily</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARTICLES ============ -->
+  <section class="art-section">
+    <div class="container">
+      <div class="section-eyebrow">📰 Latest Guides</div>
+      <h2 class="section-title">Plan Your Trip</h2>
+      <p class="section-desc">Honest comparisons, expert diving guides, and practical tips — written by people who know North Sulawesi inside out.</p>
+      <div class="art-grid">
+        <a class="art-card animate-in" href="#">
+          <span class="cat">⚖️ Comparison</span>
+          <h4>Bunaken vs Raja Ampat: Which Dive Destination Wins in 2026?</h4>
+          <p>An honest head-to-head comparison of Indonesia's two most famous dive destinations — accessibility, marine life, costs, and crowds. Verdict: Bunaken wins for 9 out of 10 divers.</p>
+          <span class="meta">Coming soon</span>
+        </a>
+        <a class="art-card animate-in" href="#">
+          <span class="cat">✈️ Travel Guide</span>
+          <h4>How to Get to Manado: Direct Flights & Best Routes 2026</h4>
+          <p>From Guangzhou, Singapore, Bali, and Jakarta — all direct flight options updated for 2026 with schedules, airlines, and tips to score the best deals.</p>
+          <span class="meta">Coming soon</span>
+        </a>
+        <a class="art-card animate-in" href="#">
+          <span class="cat">🌊 Diving</span>
+          <h4>Best Time to Dive Bunaken: Seasonality, Visibility & Marine Life</h4>
+          <p>Dry season vs wet season, water temperatures, currents, and what marine life you can expect month by month. Plan your dive trip with confidence.</p>
+          <span class="meta">Coming soon</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <h2>Ready to Explore North Sulawesi?</h2>
+    <p>Get the latest guides, diving tips, and travel updates straight to your inbox. No spam — just honest advice from locals who know the region best.</p>
+    <a href="#" class="btn-primary">Subscribe for Updates →</a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div>
+        <h5 style="background:linear-gradient(135deg,#7fdbad,#4fc3f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">North Sulawesi Explorer</h5>
+        <p class="brand-desc">The ultimate independent guide to Manado, Bunaken, Tomohon, and Lembeh Strait — written by travel experts who call North Sulawesi home.</p>
+      </div>
+      <div>
+        <h5>Destinations</h5>
+        <a href="#">Manado</a>
+        <a href="#">Bunaken</a>
+        <a href="#">Tomohon</a>
+        <a href="#">Lembeh Strait</a>
+      </div>
+      <div>
+        <h5>Plan Your Trip</h5>
+        <a href="#">Getting Here</a>
+        <a href="#">Best Time to Visit</a>
+        <a href="#">Where to Stay</a>
+        <a href="#">Visa Guide</a>
+      </div>
+      <div>
+        <h5>中文</h5>
+        <a href="/zh/">美娜多旅游攻略</a>
+        <a href="/zh/bunaken/">布纳肯潜水指南</a>
+        <a href="/zh/flights/">广州直飞美娜多</a>
+        <a href="/zh/hotels/">美娜多酒店推荐</a>
+      </div>
+      <div class="bottom">© 2026 North Sulawesi Explorer. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
